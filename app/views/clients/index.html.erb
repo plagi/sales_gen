@@ -1,0 +1,67 @@
+<h1>Listing clients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Name</th>
+      <th>State</th>
+      <th>Phone</th>
+      <th>Data</th>
+      <th>Legal form</th>
+      <th>Legal name</th>
+      <th>Legal inn</th>
+      <th>Legal kpp</th>
+      <th>Legal ogrn</th>
+      <th>Legal address</th>
+      <th>Post address</th>
+      <th>Legal bank name</th>
+      <th>Legal bank bic</th>
+      <th>Legal cor acc num</th>
+      <th>Legal bank acc num</th>
+      <th>Legal ceo reason</th>
+      <th>Legal ceo position</th>
+      <th>Legal ceo full name</th>
+      <th>Deleted at</th>
+      <th>Balance</th>
+      <th>Web site</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.user %></td>
+        <td><%= client.name %></td>
+        <td><%= client.state_id %></td>
+        <td><%= client.phone %></td>
+        <td><%= client.data %></td>
+        <td><%= client.legal_form %></td>
+        <td><%= client.legal_name %></td>
+        <td><%= client.legal_inn %></td>
+        <td><%= client.legal_kpp %></td>
+        <td><%= client.legal_ogrn %></td>
+        <td><%= client.legal_address %></td>
+        <td><%= client.post_address %></td>
+        <td><%= client.legal_bank_name %></td>
+        <td><%= client.legal_bank_bic %></td>
+        <td><%= client.legal_cor_acc_num %></td>
+        <td><%= client.legal_bank_acc_num %></td>
+        <td><%= client.legal_ceo_reason %></td>
+        <td><%= client.legal_ceo_position %></td>
+        <td><%= client.legal_ceo_full_name %></td>
+        <td><%= client.deleted_at %></td>
+        <td><%= client.balance %></td>
+        <td><%= client.web_site %></td>
+        <td><%= link_to 'Show', client %></td>
+        <td><%= link_to 'Edit', edit_client_path(client) %></td>
+        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client', new_client_path %>

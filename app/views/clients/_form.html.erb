@@ -1,0 +1,32 @@
+<%= simple_form_for(@client) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :name %>
+    <%= f.input :state_id %>
+    <%= f.input :phone %>
+    <%= f.input :data %>
+    <%= f.input :legal_form %>
+    <%= f.input :legal_name %>
+    <%= f.input :legal_inn %>
+    <%= f.input :legal_kpp %>
+    <%= f.input :legal_ogrn %>
+    <%= f.input :legal_address %>
+    <%= f.input :post_address %>
+    <%= f.input :legal_bank_name %>
+    <%= f.input :legal_bank_bic %>
+    <%= f.input :legal_cor_acc_num %>
+    <%= f.input :legal_bank_acc_num %>
+    <%= f.input :legal_ceo_reason %>
+    <%= f.input :legal_ceo_position %>
+    <%= f.input :legal_ceo_full_name %>
+    <%= f.input :deleted_at %>
+    <%= f.input :balance %>
+    <%= f.input :web_site %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
