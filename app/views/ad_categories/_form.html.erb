@@ -1,30 +1,124 @@
-<%= simple_form_for(@ad_category) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :url %>
-    <%= f.input :title %>
-    <%= f.input :ad_texts %>
-    <%= f.input :fast_urls %>
-    <%= f.association :client %>
-    <%= f.input :deleted_at %>
-    <%= f.input :ad_text1 %>
-    <%= f.input :ad_text2 %>
-    <%= f.input :ad_text3 %>
-    <%= f.input :ad_text4 %>
-    <%= f.input :ad_text5 %>
-    <%= f.input :fast_url1 %>
-    <%= f.input :fast_url2 %>
-    <%= f.input :fast_url3 %>
-    <%= f.input :fast_url4 %>
-    <%= f.input :fast_url_title1 %>
-    <%= f.input :fast_url_title2 %>
-    <%= f.input :fast_url_title3 %>
-    <%= f.input :fast_url_title4 %>
+<%= form_for @ad_category, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :url, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :url, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ad_texts, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ad_texts, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_urls, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_urls, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :deleted_at, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :deleted_at, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ad_text1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ad_text1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ad_text2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ad_text2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ad_text3, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ad_text3, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ad_text4, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ad_text4, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ad_text5, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ad_text5, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_url1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_url1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_url2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_url2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_url3, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_url3, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_url4, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_url4, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_url_title1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_url_title1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_url_title2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_url_title2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_url_title3, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_url_title3, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fast_url_title4, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fast_url_title4, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  ad_categories_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

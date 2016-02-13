@@ -1,104 +1,60 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = AdCategory -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => AdCategory %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @ad_category.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.url %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ad_texts) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.ad_texts %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_urls) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_urls %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:deleted_at) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.deleted_at %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ad_text1) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.ad_text1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ad_text2) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.ad_text2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ad_text3) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.ad_text3 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ad_text4) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.ad_text4 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ad_text5) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.ad_text5 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_url1) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_url1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_url2) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_url2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_url3) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_url3 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_url4) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_url4 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_url_title1) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_url_title1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_url_title2) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_url_title2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_url_title3) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_url_title3 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fast_url_title4) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_category.fast_url_title4 %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @ad_category.url %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              ad_categories_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_ad_category_path(@ad_category), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              ad_category_path(@ad_category),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @ad_category.title %>
-</p>
-
-<p>
-  <strong>Ad texts:</strong>
-  <%= @ad_category.ad_texts %>
-</p>
-
-<p>
-  <strong>Fast urls:</strong>
-  <%= @ad_category.fast_urls %>
-</p>
-
-<p>
-  <strong>Client:</strong>
-  <%= @ad_category.client %>
-</p>
-
-<p>
-  <strong>Deleted at:</strong>
-  <%= @ad_category.deleted_at %>
-</p>
-
-<p>
-  <strong>Ad text1:</strong>
-  <%= @ad_category.ad_text1 %>
-</p>
-
-<p>
-  <strong>Ad text2:</strong>
-  <%= @ad_category.ad_text2 %>
-</p>
-
-<p>
-  <strong>Ad text3:</strong>
-  <%= @ad_category.ad_text3 %>
-</p>
-
-<p>
-  <strong>Ad text4:</strong>
-  <%= @ad_category.ad_text4 %>
-</p>
-
-<p>
-  <strong>Ad text5:</strong>
-  <%= @ad_category.ad_text5 %>
-</p>
-
-<p>
-  <strong>Fast url1:</strong>
-  <%= @ad_category.fast_url1 %>
-</p>
-
-<p>
-  <strong>Fast url2:</strong>
-  <%= @ad_category.fast_url2 %>
-</p>
-
-<p>
-  <strong>Fast url3:</strong>
-  <%= @ad_category.fast_url3 %>
-</p>
-
-<p>
-  <strong>Fast url4:</strong>
-  <%= @ad_category.fast_url4 %>
-</p>
-
-<p>
-  <strong>Fast url title1:</strong>
-  <%= @ad_category.fast_url_title1 %>
-</p>
-
-<p>
-  <strong>Fast url title2:</strong>
-  <%= @ad_category.fast_url_title2 %>
-</p>
-
-<p>
-  <strong>Fast url title3:</strong>
-  <%= @ad_category.fast_url_title3 %>
-</p>
-
-<p>
-  <strong>Fast url title4:</strong>
-  <%= @ad_category.fast_url_title4 %>
-</p>
-
-<%= link_to 'Edit', edit_ad_category_path(@ad_category) %> |
-<%= link_to 'Back', ad_categories_path %>
