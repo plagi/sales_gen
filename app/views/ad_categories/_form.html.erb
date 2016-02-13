@@ -1,0 +1,30 @@
+<%= simple_form_for(@ad_category) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :url %>
+    <%= f.input :title %>
+    <%= f.input :ad_texts %>
+    <%= f.input :fast_urls %>
+    <%= f.association :client %>
+    <%= f.input :deleted_at %>
+    <%= f.input :ad_text1 %>
+    <%= f.input :ad_text2 %>
+    <%= f.input :ad_text3 %>
+    <%= f.input :ad_text4 %>
+    <%= f.input :ad_text5 %>
+    <%= f.input :fast_url1 %>
+    <%= f.input :fast_url2 %>
+    <%= f.input :fast_url3 %>
+    <%= f.input :fast_url4 %>
+    <%= f.input :fast_url_title1 %>
+    <%= f.input :fast_url_title2 %>
+    <%= f.input :fast_url_title3 %>
+    <%= f.input :fast_url_title4 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

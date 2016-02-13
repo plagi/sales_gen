@@ -1,0 +1,63 @@
+<h1>Listing ad_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Title</th>
+      <th>Ad texts</th>
+      <th>Fast urls</th>
+      <th>Client</th>
+      <th>Deleted at</th>
+      <th>Ad text1</th>
+      <th>Ad text2</th>
+      <th>Ad text3</th>
+      <th>Ad text4</th>
+      <th>Ad text5</th>
+      <th>Fast url1</th>
+      <th>Fast url2</th>
+      <th>Fast url3</th>
+      <th>Fast url4</th>
+      <th>Fast url title1</th>
+      <th>Fast url title2</th>
+      <th>Fast url title3</th>
+      <th>Fast url title4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ad_categories.each do |ad_category| %>
+      <tr>
+        <td><%= ad_category.name %></td>
+        <td><%= ad_category.url %></td>
+        <td><%= ad_category.title %></td>
+        <td><%= ad_category.ad_texts %></td>
+        <td><%= ad_category.fast_urls %></td>
+        <td><%= ad_category.client %></td>
+        <td><%= ad_category.deleted_at %></td>
+        <td><%= ad_category.ad_text1 %></td>
+        <td><%= ad_category.ad_text2 %></td>
+        <td><%= ad_category.ad_text3 %></td>
+        <td><%= ad_category.ad_text4 %></td>
+        <td><%= ad_category.ad_text5 %></td>
+        <td><%= ad_category.fast_url1 %></td>
+        <td><%= ad_category.fast_url2 %></td>
+        <td><%= ad_category.fast_url3 %></td>
+        <td><%= ad_category.fast_url4 %></td>
+        <td><%= ad_category.fast_url_title1 %></td>
+        <td><%= ad_category.fast_url_title2 %></td>
+        <td><%= ad_category.fast_url_title3 %></td>
+        <td><%= ad_category.fast_url_title4 %></td>
+        <td><%= link_to 'Show', ad_category %></td>
+        <td><%= link_to 'Edit', edit_ad_category_path(ad_category) %></td>
+        <td><%= link_to 'Destroy', ad_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ad category', new_ad_category_path %>
