@@ -1,37 +1,46 @@
-<h1>Listing ad_accounts</h1>
-
-<table>
+<%- model_class = AdAccount -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => AdAccount %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Login</th>
-      <th>Token</th>
-      <th>Data</th>
-      <th>Client</th>
-      <th>Deleted at</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:login) %></th>
+      <th><%= model_class.human_attribute_name(:token) %></th>
+      <th><%= model_class.human_attribute_name(:data) %></th>
+      <th><%= model_class.human_attribute_name(:deleted_at) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @ad_accounts.each do |ad_account| %>
       <tr>
+        <td><%= ad_account.id %></td>
         <td><%= ad_account.email %></td>
         <td><%= ad_account.phone %></td>
         <td><%= ad_account.login %></td>
         <td><%= ad_account.token %></td>
         <td><%= ad_account.data %></td>
-        <td><%= ad_account.client %></td>
         <td><%= ad_account.deleted_at %></td>
-        <td><%= link_to 'Show', ad_account %></td>
-        <td><%= link_to 'Edit', edit_ad_account_path(ad_account) %></td>
-        <td><%= link_to 'Destroy', ad_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l ad_account.created_at, format: :long %></td>
+        <td>
+          <%= link_to ad_account_path(ad_account), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to ad_account_path(ad_account), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Ad account', new_ad_account_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_ad_account_path,
+            :class => 'btn btn-primary' %>

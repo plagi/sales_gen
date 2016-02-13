@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = AdAccount -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => AdAccount %></h1>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @ad_account.email %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_account.email %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_account.phone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:login) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_account.login %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:token) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_account.token %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:data) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_account.data %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:deleted_at) %></dt>
+      <dd><pre class="prettyprint"><%= @ad_account.deleted_at %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @ad_account.phone %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              ad_accounts_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_ad_account_path(@ad_account), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              ad_account_path(@ad_account),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Login:</strong>
-  <%= @ad_account.login %>
-</p>
-
-<p>
-  <strong>Token:</strong>
-  <%= @ad_account.token %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @ad_account.data %>
-</p>
-
-<p>
-  <strong>Client:</strong>
-  <%= @ad_account.client %>
-</p>
-
-<p>
-  <strong>Deleted at:</strong>
-  <%= @ad_account.deleted_at %>
-</p>
-
-<%= link_to 'Edit', edit_ad_account_path(@ad_account) %> |
-<%= link_to 'Back', ad_accounts_path %>
