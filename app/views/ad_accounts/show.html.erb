@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @ad_account.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @ad_account.phone %>
+</p>
+
+<p>
+  <strong>Login:</strong>
+  <%= @ad_account.login %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @ad_account.token %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @ad_account.data %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @ad_account.client %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @ad_account.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_ad_account_path(@ad_account) %> |
+<%= link_to 'Back', ad_accounts_path %>
