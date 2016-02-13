@@ -1,38 +1,40 @@
-<h1>Listing clients</h1>
-
-<table>
+<%- model_class = Client -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Client %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Name</th>
-      <th>State</th>
-      <th>Phone</th>
-      <th>Data</th>
-      <th>Legal form</th>
-      <th>Legal name</th>
-      <th>Legal inn</th>
-      <th>Legal kpp</th>
-      <th>Legal ogrn</th>
-      <th>Legal address</th>
-      <th>Post address</th>
-      <th>Legal bank name</th>
-      <th>Legal bank bic</th>
-      <th>Legal cor acc num</th>
-      <th>Legal bank acc num</th>
-      <th>Legal ceo reason</th>
-      <th>Legal ceo position</th>
-      <th>Legal ceo full name</th>
-      <th>Deleted at</th>
-      <th>Balance</th>
-      <th>Web site</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:state_id) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:data) %></th>
+      <th><%= model_class.human_attribute_name(:legal_form) %></th>
+      <th><%= model_class.human_attribute_name(:legal_name) %></th>
+      <th><%= model_class.human_attribute_name(:legal_inn) %></th>
+      <th><%= model_class.human_attribute_name(:legal_kpp) %></th>
+      <th><%= model_class.human_attribute_name(:legal_ogrn) %></th>
+      <th><%= model_class.human_attribute_name(:legal_address) %></th>
+      <th><%= model_class.human_attribute_name(:post_address) %></th>
+      <th><%= model_class.human_attribute_name(:legal_bank_name) %></th>
+      <th><%= model_class.human_attribute_name(:legal_bank_bic) %></th>
+      <th><%= model_class.human_attribute_name(:legal_cor_acc_num) %></th>
+      <th><%= model_class.human_attribute_name(:legal_bank_acc_num) %></th>
+      <th><%= model_class.human_attribute_name(:legal_ceo_reason) %></th>
+      <th><%= model_class.human_attribute_name(:legal_ceo_position) %></th>
+      <th><%= model_class.human_attribute_name(:legal_ceo_full_name) %></th>
+      <th><%= model_class.human_attribute_name(:deleted_at) %></th>
+      <th><%= model_class.human_attribute_name(:balance) %></th>
+      <th><%= model_class.human_attribute_name(:web_site) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @clients.each do |client| %>
       <tr>
-        <td><%= client.user %></td>
+        <td><%= client.id %></td>
         <td><%= client.name %></td>
         <td><%= client.state_id %></td>
         <td><%= client.phone %></td>
@@ -54,14 +56,21 @@
         <td><%= client.deleted_at %></td>
         <td><%= client.balance %></td>
         <td><%= client.web_site %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l client.created_at, format: :long %></td>
+        <td>
+          <%= link_to client_path(client), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to client_path(client), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Client', new_client_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_client_path,
+            :class => 'btn btn-primary' %>

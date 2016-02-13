@@ -1,114 +1,64 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Client -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Client %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @client.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @client.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:state_id) %></dt>
+      <dd><pre class="prettyprint"><%= @client.state_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone) %></dt>
+      <dd><pre class="prettyprint"><%= @client.phone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:data) %></dt>
+      <dd><pre class="prettyprint"><%= @client.data %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_form) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_form %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_name) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_inn) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_inn %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_kpp) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_kpp %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_ogrn) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_ogrn %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_address) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:post_address) %></dt>
+      <dd><pre class="prettyprint"><%= @client.post_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_bank_name) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_bank_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_bank_bic) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_bank_bic %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_cor_acc_num) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_cor_acc_num %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_bank_acc_num) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_bank_acc_num %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_ceo_reason) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_ceo_reason %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_ceo_position) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_ceo_position %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:legal_ceo_full_name) %></dt>
+      <dd><pre class="prettyprint"><%= @client.legal_ceo_full_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:deleted_at) %></dt>
+      <dd><pre class="prettyprint"><%= @client.deleted_at %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:balance) %></dt>
+      <dd><pre class="prettyprint"><%= @client.balance %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:web_site) %></dt>
+      <dd><pre class="prettyprint"><%= @client.web_site %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              clients_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_client_path(@client), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              client_path(@client),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>State:</strong>
-  <%= @client.state_id %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @client.phone %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @client.data %>
-</p>
-
-<p>
-  <strong>Legal form:</strong>
-  <%= @client.legal_form %>
-</p>
-
-<p>
-  <strong>Legal name:</strong>
-  <%= @client.legal_name %>
-</p>
-
-<p>
-  <strong>Legal inn:</strong>
-  <%= @client.legal_inn %>
-</p>
-
-<p>
-  <strong>Legal kpp:</strong>
-  <%= @client.legal_kpp %>
-</p>
-
-<p>
-  <strong>Legal ogrn:</strong>
-  <%= @client.legal_ogrn %>
-</p>
-
-<p>
-  <strong>Legal address:</strong>
-  <%= @client.legal_address %>
-</p>
-
-<p>
-  <strong>Post address:</strong>
-  <%= @client.post_address %>
-</p>
-
-<p>
-  <strong>Legal bank name:</strong>
-  <%= @client.legal_bank_name %>
-</p>
-
-<p>
-  <strong>Legal bank bic:</strong>
-  <%= @client.legal_bank_bic %>
-</p>
-
-<p>
-  <strong>Legal cor acc num:</strong>
-  <%= @client.legal_cor_acc_num %>
-</p>
-
-<p>
-  <strong>Legal bank acc num:</strong>
-  <%= @client.legal_bank_acc_num %>
-</p>
-
-<p>
-  <strong>Legal ceo reason:</strong>
-  <%= @client.legal_ceo_reason %>
-</p>
-
-<p>
-  <strong>Legal ceo position:</strong>
-  <%= @client.legal_ceo_position %>
-</p>
-
-<p>
-  <strong>Legal ceo full name:</strong>
-  <%= @client.legal_ceo_full_name %>
-</p>
-
-<p>
-  <strong>Deleted at:</strong>
-  <%= @client.deleted_at %>
-</p>
-
-<p>
-  <strong>Balance:</strong>
-  <%= @client.balance %>
-</p>
-
-<p>
-  <strong>Web site:</strong>
-  <%= @client.web_site %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
