@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :projects
+
   resources :clients
 
   resources :ad_categories
